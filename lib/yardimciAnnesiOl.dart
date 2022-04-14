@@ -1,36 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:yardimci_annesi_app/yardimciAnnesiOl.dart';
-import 'package:yardimci_annesi_app/yardimciAnnesiBul.dart';
-void main() {
-  runApp(const MyApp());
-}
+import 'package:yardimci_annesi_app/login.dart';
+import 'package:yardimci_annesi_app/register.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class yardimciAnnesiOl extends StatefulWidget {
+  const yardimciAnnesiOl({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Yardimci Annesi Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: const MyHomePage(title: 'YARDIMCI ANNESİ'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  String get title => "YARDİMCİ ANNESİ OL";
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<yardimciAnnesiOl> createState() => _yardimciAnnesiOlState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _yardimciAnnesiOlState extends State<yardimciAnnesiOl> {
+
   @override
   Widget build(BuildContext context) {
     var ekranBilgisi = MediaQuery.of(context);
@@ -46,13 +28,13 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.only(
                 top: ekranYukseligi / 100, bottom: ekranYukseligi / 100),
             child: Image.asset(
-              "resimler/main.jpg",
+              "resimler/yardimciAnnesiOl.jpg",
               width: ekranGenisligi,
               height: ekranYukseligi / 1.5,
             ),
           ),
           Text(
-            "Tıpkı Kendi Anneniz Gibi",
+            "YARDIMCI ANNESİ MİSİNİZ ?",
             style: TextStyle(
               color: Colors.green,
               fontWeight: FontWeight.bold,
@@ -71,9 +53,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: ekranYukseligi / 10,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => yardimciAnnesiOl()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => register()));
                     },
-                    child: Text("Yardimci Annesi Ol",
+                    child: Text("KAYIT OL",
                         style: TextStyle(fontSize: ekranGenisligi / 25)),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.green,
@@ -91,10 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: ekranYukseligi / 10,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => yardimciAnnesiBul()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => login()));
                     },
-                    child: Text("Yardimci Annesi Bul",
-                        style: TextStyle(fontSize: ekranGenisligi / 25)),
+                    child: Text("YARDİMCİ ANNEYİM",
+                        style: TextStyle(fontSize: ekranGenisligi / 29)),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.green,
                         textStyle: TextStyle(color: Colors.white)),
